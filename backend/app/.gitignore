@@ -1,0 +1,76 @@
+# Python compiled files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+virtualenv/
+ENV/
+
+# Dependency directories
+site-packages/
+dist-packages/
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+wheelhouse/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Cache files
+*.cache
+.cache/
+.pytest_cache/
+.hypothesis/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Testing and coverage
+.coverage
+coverage.xml
+*,cover
+htmlcov/
+
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Miscellaneous
+*.swp
+*~
+*.bak

@@ -1,0 +1,26 @@
+# requirements.txt - ULTIMATE LEGAL DOCUMENT ANALYZER
+# Essential dependencies for legal document analysis with FastAPI, Legal-BERT, ChromaDB, and Gemini AI
+
+# Core API Dependencies
+fastapi>=0.115.0
+uvicorn>=0.30.6
+python-multipart>=0.0.9
+python-dotenv>=1.0.1
+httpx>=0.27.2
+pypdf>=4.3.1
+pydantic>=2.9.2
+aiofiles>=23.2.1
+
+# Legal Models & AI Dependencies
+torch>=2.4.1
+transformers>=4.44.2
+tokenizers>=0.19.1
+numpy>=1.26.4
+safetensors>=0.4.5
+
+# Vector Database Dependencies
+chromadb>=0.5.5
+faiss-cpu>=1.8.0
+
+# Additional Utilities
+regex>=2024.7.24
