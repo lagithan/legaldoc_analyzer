@@ -23,21 +23,6 @@ def check_environment():
     print("✅ Environment configuration looks good!")
     return True
 
-def check_dependencies():
-    """Check if required dependencies are installed"""
-    try:
-        import fastapi
-        import torch
-        import transformers
-        import chromadb
-        import httpx
-        import PyPDF2
-        print("✅ All required dependencies are installed!")
-        return True
-    except ImportError as e:
-        print(f"❌ Missing dependency: {e}")
-        print("📦 Please install dependencies: pip install -r requirements.txt")
-        return False
 
 def main():
     """Main function to start the application"""
@@ -50,9 +35,6 @@ def main():
 
     # Check environment and dependencies
     if not check_environment():
-        sys.exit(1)
-
-    if not check_dependencies():
         sys.exit(1)
 
     # Configuration
