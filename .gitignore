@@ -1,0 +1,137 @@
+# .gitignore - Backend Legal Document Analyzer
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# ChromaDB & Vector Database
+chroma_db/
+*.db
+*.sqlite
+*.sqlite3
+
+# Model Cache & Downloads
+model_cache/
+models/
+*.bin
+*.safetensors
+transformers_cache/
+
+# Logs
+*.log
+logs/
+app.log
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+*.temp
+
+# Uploaded files
+uploads/
+documents/
+test_documents/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# PyTorch
+*.pth
+*.pt
+
+# Hugging Face
+.cache/
+huggingface/
+
+# Test files
+test_*.pdf
+sample_*.pdf
+*.test
+
+# Documentation build
+docs/_build/
+site/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+
+# pytest
+.pytest_cache/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Configuration overrides
+config.local.py
+settings.local.py
+
+# SSL certificates
+*.pem
+*.key
+*.crt
+*.p12
+
+# Sensitive data
+api_keys.txt
+secrets/
+credentials/
