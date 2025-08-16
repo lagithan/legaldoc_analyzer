@@ -1,6 +1,6 @@
 # backend/app/services/document_processor.py
 
-import PyPDF2
+import pypdf
 from io import BytesIO
 import json
 import logging
@@ -27,7 +27,7 @@ lawyer_engine = LawyerRecommendationEngine()
 async def extract_text_from_pdf(file_content: bytes) -> str:
     """Enhanced PDF text extraction"""
     try:
-        pdf_reader = PyPDF2.PdfReader(BytesIO(file_content))
+        pdf_reader = pypdf.PdfReader(BytesIO(file_content))
         text = ""
 
         # Process more pages for better analysis
