@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Legal Doc Explainer - Professional Legal Document Analysis</title>
+    <meta name="description" content="AI-powered legal document analyzer with Legal-BERT and Gemini AI. Upload legal documents for instant analysis, risk assessment, and smart Q&A assistance." />
+    <meta name="keywords" content="legal documents, AI analysis, document review, legal AI, contract analysis, risk assessment" />
+
+    <!-- Preconnect to improve performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Inter font for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Additional meta tags for better SEO and social sharing -->
+    <meta property="og:title" content="AI Legal Doc Explainer" />
+    <meta property="og:description" content="Professional AI-powered legal document analysis and review" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AI Legal Doc Explainer" />
+    <meta name="twitter:description" content="Professional AI-powered legal document analysis and review" />
+
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#000000" />
+
+    <style>
+      /* Critical CSS for loading state */
+      #root {
+        min-height: 100vh;
+        background: #F8F8FF;
+      }
+
+      .loading-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: #F8F8FF;
+        font-family: 'Inter', system-ui, sans-serif;
+      }
+
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid #E5E7EB;
+        border-top: 3px solid #000000;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      .loading-text {
+        margin-left: 16px;
+        color: #374151;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Loading state shown before React loads -->
+      <div class="loading-container">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading AI Legal Doc Explainer...</div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
