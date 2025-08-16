@@ -5,10 +5,6 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import logging
-
-# Import configuration
-from .config.settings import logger
 
 # Import API routers
 from .api.endpoints import documents, questions, analytics, health
