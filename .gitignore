@@ -56,12 +56,18 @@ chroma_db/
 *.sqlite
 *.sqlite3
 
-# Model Cache & Downloads
+# ML Model Cache & Downloads (but NOT app/models/ directory!)
 model_cache/
-models/
+ml_models/
+downloaded_models/
 *.bin
 *.safetensors
 transformers_cache/
+# Specific ML model directories
+nlpaueb/
+bert-*/
+legal-bert-*/
+.cache/huggingface/
 
 # Logs
 *.log
@@ -88,11 +94,11 @@ test_documents/
 ehthumbs.db
 Thumbs.db
 
-# PyTorch
+# PyTorch model files
 *.pth
 *.pt
 
-# Hugging Face
+# Hugging Face cache
 .cache/
 huggingface/
 
@@ -135,3 +141,6 @@ settings.local.py
 api_keys.txt
 secrets/
 credentials/
+
+# IMPORTANT: Keep app/models/ directory for Pydantic models
+!app/models/
