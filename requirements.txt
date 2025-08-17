@@ -17,6 +17,7 @@ transformers>=4.44.2
 tokenizers>=0.19.1
 numpy>=1.26.4
 safetensors>=0.4.5
+scikit-learn>=1.3.0
 
 # Vector Database Dependencies
 chromadb>=0.5.5
