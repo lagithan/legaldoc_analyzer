@@ -68,15 +68,57 @@ async def get_analytics():
 @router.get("/legal-models/status")
 async def get_legal_models_status():
     """Get status of loaded legal models"""
-    from ...services.legal_model_manager import LegalModelManager
+    try:
+        from ...services.legal_model_manager import LegalModelManager
 
-    # This would ideally access the same instance used elsewhere
-    legal_model_manager = LegalModelManager()
+        # Create instance to check model status
+        legal_model_manager = LegalModelManager()
 
-    return {
-        "available_models": AVAILABLE_LEGAL_MODELS,
-        "loaded_models": list(legal_model_manager.models.keys()),
-        "device": str(legal_model_manager.device),
-        "total_models": len(legal_model_manager.models),
-        "status": "operational" if legal_model_manager.models else "degraded"
-    }
+        # Check if the model is loaded
+        model_loaded = legal_model_manager.model is not None
+        tokenizer_loaded = legal_model_manager.tokenizer is not None
+        
+        # Get model name from the loaded model
+        loaded_model_name = "Legal BERT Small (Fast)" if model_loaded else "None"
+        
+        # Determine status
+        if model_loaded and tokenizer_loaded:
+            status = "operational"
+            loaded_models = [loaded_model_name]
+        elif model_loaded or tokenizer_loaded:
+            status = "partial"
+            loaded_models = [loaded_model_name] if model_loaded else []
+        else:
+            status = "degraded"
+            loaded_models = []
+
+        return {
+            "available_models": AVAILABLE_LEGAL_MODELS,
+            "loaded_models": loaded_models,
+            "device": str(legal_model_manager.device),
+            "total_models": len(loaded_models),
+            "status": status,
+            "model_details": {
+                "model_loaded": model_loaded,
+                "tokenizer_loaded": tokenizer_loaded,
+                "model_dimension": legal_model_manager.model_dimension,
+                "current_model": loaded_model_name
+            }
+        }
+        
+    except Exception as e:
+        logger.error(f"Error getting legal models status: {str(e)}")
+        return {
+            "available_models": AVAILABLE_LEGAL_MODELS,
+            "loaded_models": [],
+            "device": "unknown",
+            "total_models": 0,
+            "status": "error",
+            "error": str(e),
+            "model_details": {
+                "model_loaded": False,
+                "tokenizer_loaded": False,
+                "model_dimension": 0,
+                "current_model": "Error loading model"
+            }
+        }
