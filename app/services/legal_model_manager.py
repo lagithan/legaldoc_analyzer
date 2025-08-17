@@ -26,7 +26,7 @@ def convert_numpy_types(obj: Any) -> Any:
     else:
         return obj
 
-class OptimizedLegalModelManager:
+class LegalModelManager:
     def __init__(self):
         """Initialize with only fast Legal BERT Small model for optimal performance"""
         self.model = None
