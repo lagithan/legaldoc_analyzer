@@ -181,7 +181,7 @@ async def comprehensive_legal_analysis(text: str, filename: str) -> dict:
             clause_patterns=', '.join(legal_analysis.get('model1_analysis', {}).get('clause_patterns', [])),
             obligation_analysis=', '.join(legal_analysis.get('model1_analysis', {}).get('obligation_analysis', [])),
             risk_assessment_data=json.dumps(risk_assessment_data, indent=2),
-            document_text=text[:8000]  # Send more text to Gemini
+            document_text=text[:20000]  # Send more text to Gemini
         )
 
         logger.info("Sending comprehensive REAL analysis to Gemini AI...")
@@ -288,7 +288,7 @@ def create_emergency_fallback_analysis(text: str, filename: str, error_msg: str)
         basic_complexity = min(legal_term_count / 20.0, 1.0)  # Max at 20 terms
 
         # Basic confidence based on text length and legal terms
-        basic_confidence = 0.3 + (min(word_count / 1000, 1.0) * 0.2) + (legal_term_count / 20.0 * 0.2)
+        basic_confidence = 0.5 + (min(word_count / 1000, 1.0) * 0.2) + (legal_term_count / 30.0 * 0.2)
         basic_confidence = min(max(basic_confidence, 0.2), 0.8)  # Emergency fallback max 80%
 
         # Basic risk calculation
