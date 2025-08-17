@@ -309,4 +309,4 @@ class LegalModelManager:
         return self.ultra_fast_text_analysis(text)
 
 # For backward compatibility, keep the original class name as an alias
-LegalModelManager = UltraFastLegalModelManager
+LegalModelManager = LegalModelManager
